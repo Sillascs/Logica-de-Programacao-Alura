@@ -3,13 +3,14 @@
 <script>
 	function pulaLinha() {
 
-		document.write("<br>");
+		document.write("<br><hr><br>");
 
 	}
 
 	function mostra(texto) {
 
-		document.write(texto);
+		document.write("<big>" + texto + "</big>");
+		pulaLinha();
 
 	}
 	
@@ -21,11 +22,8 @@
 	var media = (idadeFlavio + idadeJoaquim + idadeBarney)/3
 
 	mostra("Flávio tem " + idadeFlavio + " anos");
-	pulaLinha();
 	mostra("Joaquim tem " + idadeJoaquim + " anos");
-	pulaLinha();
 	mostra("Barney tem " + idadeBarney + " anos");
-	pulaLinha();
 	mostra("A média das idades é " + Math.round(media));
 
 </script>
