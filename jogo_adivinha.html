@@ -14,6 +14,37 @@
 
 	}
 
-	mostra(Math.round(Math.random()*10))
+	function sorteia(numero) {
+
+		return Math.round(Math.random() * numero);
+
+	}
+
+	alert("Jogo da Adivinhação");
+	var escolha = parseInt(prompt("Insira um numero"));
+	var numeroSortido = sorteia(escolha);
+	var numeroEscolhido = parseInt(prompt("Escolha um numero de 0 a " + escolha));
+
+	if(numeroEscolhido == numeroSortido) {
+
+		mostra("Parabéns! O numero sorteado foi " + numeroSortido +", e você acertou!!!");
+
+	} else{
+
+		if(numeroEscolhido > numeroSortido) {
+
+		mostra("Você errou, seu numero foi superior ao sorteado.");
+		mostra("Numero digitado: " + numeroEscolhido);
+		mostra("O numero sorteado foi: " + numeroSortido);
+
+		} else{
+
+			mostra("Você errou, seu numero foi inferior ao sorteado.");
+			mostra("Numero digitado: " + numeroEscolhido);
+			mostra("O numero sorteado foi: " + numeroSortido);
+
+		}
+
+	}
 
 </script>

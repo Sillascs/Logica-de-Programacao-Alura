@@ -11,12 +11,25 @@
     }
 
     var idade = parseInt(prompt("Qual é sua idade?"));
-    var temCarteira = prompt("Tem carteira? Responda S ou N").toUpperCase();
 
-    if(idade >= 18 && temCarteira == "S") {
-    	mostra("Parabéns! Você possui permissão para dirigir.")
+    if(idade >= 18) {
+
+    	var temCarteira = prompt("Tem carteira? Responda S ou N").toUpperCase();
+    	
+    	if(temCarteira == "S") {
+
+    		mostra("Parabéns! Você possui permissão para dirigir.");
+
+    	} else{
+
+    		mostra("Você não tem permissão para dirigir por não possuir uma CNH");
+
+    	}   	
+
     } else{
-    	mostra("Você não possui os requisitos mínimos para dirigir")
+
+    		mostra("Você não tem idade mínima para dirigir");
+
     }
 
 </script>
