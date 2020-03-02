@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script>
+	function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+	var multiplicador = 0;
+
+	while(multiplicador <= 10) {
+		mostra("O resultado de 2 x " + multiplicador + " é " + (2 * multiplicador));
+		multiplicador++
+	}
+	
+</script>
