@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+
+<input>
+<button>Descubra o segredo</button>
+<script>
+	function sorteia() {
+
+		return Math.round(Math.random() * 10)
+	}
+
+	function sorteiaNumeros(quantidade) {
+
+		var segredos = [];
+		var contador = 1;
+
+		while(contador <= quantidade) {
+
+			var numero = sorteia();
+			var numeroRepetido = false;
+
+			for(var i = 0; i < segredos.length; i++) {
+
+				if(numero == segredos[i]) {
+
+					numeroRepetido = true;
+					break;
+				}
+			}
+
+			if(numeroRepetido == false && numero !== 0) {
+
+				segredos.push(numero);
+				contador++;
+			}
+		}
+
+		return segredos
+	}
+
+	var segredo = sorteiaNumeros(3);
+	var input = document.querySelector("input");
+	input.focus();
+
+	function verifica() {
+
+		var acertou = false;
+		for(var posicao = 0; posicao < segredo.length; posicao++) {
+		
+			if(input.value == segredo[posicao]) {
+
+				alert("Você acertou!!!");
+				acertou = true;
+				break;
+			}
+		}
+
+		if(acertou == false) {
+
+			alert("Você errou!");
+		}
+
+		input.value = "";
+		input.focus();
+	}
+
+	var button = document.querySelector("button");
+	button.onclick = verifica;
+
+	console.log(segredo);
+</script>

@@ -23,28 +23,26 @@
 	alert("Jogo da Adivinhação");
 	var escolha = parseInt(prompt("Insira um numero"));
 	var numeroSortido = sorteia(escolha);
-	var numeroEscolhido = parseInt(prompt("Escolha um numero de 0 a " + escolha));
 
-	if(numeroEscolhido == numeroSortido) {
+	for(tentativa = 1; tentativa <= 3; tentativa++) {
 
-		mostra("Parabéns! O numero sorteado foi " + numeroSortido +", e você acertou!!!");
+		var numeroEscolhido = parseInt(prompt("Escolha um numero de 0 a " + escolha));
+		if(numeroEscolhido == numeroSortido) {
 
-	} else{
-
-		if(numeroEscolhido > numeroSortido) {
-
-		mostra("Você errou, seu numero foi superior ao sorteado.");
-		mostra("Numero digitado: " + numeroEscolhido);
-		mostra("O numero sorteado foi: " + numeroSortido);
-
+			mostra("Parabéns! você acertou, o numero sorteado foi " + numeroSortido);
+			break;
 		} else{
+			if(tentativa == 3) {
+				mostra("Você errou, o numero sorteado foi: " + numeroSortido);
+			} else {
+				if(numeroEscolhido > numeroSortido) {
 
-			mostra("Você errou, seu numero foi inferior ao sorteado.");
-			mostra("Numero digitado: " + numeroEscolhido);
-			mostra("O numero sorteado foi: " + numeroSortido);
+					alert("Você errou, seu numero foi superior ao sorteado.");
+				} else{
 
+					alert("Você errou, seu numero foi inferior ao sorteado.");
+				}
+			}
 		}
-
 	}
-
 </script>
